@@ -209,7 +209,7 @@ runner = dict(type='EpochBasedRunner', max_epochs=20)
 work_dir='./work_dirs/detectors_cascade_rcnn_r50_1x_visdrone.py'
 total_epochs=20
 
-checkpoint_config = dict(interval=1)
+checkpoint_config = dict(interval=1, max_keep_ckpt=2)
 # yapf:disable
 log_config = dict(
     interval=50,
