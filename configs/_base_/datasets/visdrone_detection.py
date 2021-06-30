@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '/home/ubuntu/nhi_workspace/visdrone19/'
+data_root = '/home/ubuntu/visdrone/data/'
 classes = classes = (
  "pedestrian",
  "people",
@@ -46,19 +46,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file='/home/ubuntu/hoai_workspace/visdrone2019/coco_annotations/train2019.json',
+        ann_file=data_root + 'annotations/train2019.json',
         img_prefix=data_root + 'images/train2019/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file='/home/ubuntu/hoai_workspace/visdrone2019/coco_annotations/val2019.json',
+        ann_file=data_root + 'annotations/val2019.json',
         img_prefix=data_root + 'images/val2019/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file='/home/ubuntu/hoai_workspace/visdrone2019/coco_annotations/testdev2019.json',
+        ann_file=data_root + 'annotations/testdev2019.json',
         img_prefix=data_root + 'images/testdev2019/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
